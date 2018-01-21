@@ -10,6 +10,8 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
 
 * Your background picture files go in the "images" folder inside the MMM-EasyBack module folder.
 
+* Background picture dimensions should match the resolution of your display for best results
+
 ## Installation
 
 * `git clone https://github.com/mykle1/MMM-EasyBack` into the `~/MagicMirror/modules` directory.
@@ -28,3 +30,5 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
 ## Remember
 
 * Background picture files go in the "images" folder inside the MMM-EasyBack module folder.
+
+* Background picture dimensions should match the resolution of your display for best results.
