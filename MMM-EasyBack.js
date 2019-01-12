@@ -7,9 +7,9 @@
 Module.register("MMM-EasyBack", {
 
     defaults: {
-        bgName: "Example.jpg",   // .jpg, .gif, .png, Full screen animated gifs too!
-		maxWidth: "100%",        // your picture files go in "images" folder of MMM-EasyBack
-		},                               
+        bgName: " ", // .jpg, .gif, .png, Full screen animated gifs too!
+        videoName: " " // your picture files go in "images" folder of MMM-EasyBack
+    },
 
     start: function() {
         self = this;
@@ -17,47 +17,49 @@ Module.register("MMM-EasyBack", {
 
         if (this.config.bgName != "") {
             this.url = "modules/MMM-EasyBack/images/" + this.config.bgName;
-        } 
+        } else if (this.config.vidoeName != "") {
+            this.url = "modules/MMM-EasyBack/videos/" + this.config.video;
+        }
     },
-    
-	
+
+
     getStyles: function() {
         return ["MMM-EasyBack.css"]
     },
-    
-    
+
     // Override dom generator.
     getDom: function() {
+
         var wrapper = document.createElement("div");
+
         var image = document.createElement("img");
         if (this.config.bgName != '') {
             image.src = this.url;
             image.className = "photo";
-			image.style.maxWidth = this.config.maxWidth;
+            console.log("MMM-EasyBack: Now showing image background")
+            wrapper.appendChild(image);
+
+        } else if (this.config.videoName != '') {
+            var video = document.createElement(null);
+            wrapper.innerHTML = `<video autoplay loop id="video"><source src="modules/MMM-EasyBack/videos/${this.config.videoName}" type="video/mp4"></video>`;
+            wrapper.appendChild(video);
+
+        } else {
+            console.log("MMM-EasyBack error: Please enter either image OR video in config.js NOT BOTH");
         }
-        
-        wrapper.appendChild(image);
-        
+
         return wrapper;
     },
-    
 
-/////  Add this function to the modules you want to control with voice //////
-/////  Must be the same as in "sentences" array in MMM-voice.js /////
+
+    /////  Add this function to the modules you want to control with voice //////
+    /////  Must be the same as in "sentences" array in MMM-voice.js /////
 
     notificationReceived: function(notification, payload) {
         if (notification === 'HIDE_BACKGROUND') {
-            this.hide(1000);
-            this.updateDom(300);
-        }  else if (notification === 'SHOW_BACKGROUND') {
+            this.hide();
+        } else if (notification === 'SHOW_BACKGROUND') {
             this.show(1000);
-            this.updateDom(300);
         }
-        
-            
     },
-    
-
 });
-
-
