@@ -1,10 +1,10 @@
 ## MMM-EasyBack
 
-The easiest way to use background/desktop pictures on your mirror.
+The easiest way to use background/desktop pictures or video on your mirror.
 
 Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
 
-.jpg files, .png files, .gif files, Full Screen animated gifs (not recommended for Pi users)
+.jpg files, .png files, .gif files, MP4 files, Full Screen animated gifs (not recommended for Pi users)
 
 ## Where your background picture files go
 
