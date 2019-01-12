@@ -12,6 +12,12 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
 
 * Background picture dimensions should match the resolution of your display for best results
 
+## Where your background video files go. (MP4 only at this time)
+
+* Your video files go in the "videos" folder inside the MMM-EasyBack module folder.
+
+* Background video dimensions should match the resolution of your display for best results
+
 ## Installation
 
 * `git clone https://github.com/mykle1/MMM-EasyBack` into the `~/MagicMirror/modules` directory.
@@ -23,12 +29,7 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
 		position: 'fullscreen_below',
 		config: {
 			bgName: "Example.jpg", // the file name of your background image (case sensitive)
-			maxWidth: "100%",
-		}
+			videoName: "",         // file name of your mp4
+		}       // bgName OR videoName. NOT BOTH!
 	},
 	
-## Remember
-
-* Background picture files go in the "images" folder inside the MMM-EasyBack module folder.
-
-* Background picture dimensions should match the resolution of your display for best results.
