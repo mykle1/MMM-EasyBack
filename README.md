@@ -22,6 +22,7 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
 
 ## Config.js entry and options
 
+```
 {
     module: 'MMM-EasyBack',
     position: 'fullscreen_below',
@@ -33,7 +34,8 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
         width: "1920px",     // your display's resolution in pixels. Enter in config.js
     }
 },
-	
+```
+
 ## Remember
 
 * Background picture files go in the "images" folder inside the MMM-EasyBack module folder.
