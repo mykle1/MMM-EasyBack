@@ -7,13 +7,22 @@
 Module.register("MMM-EasyBack", {
 
     defaults: {
-        bgName: " ", // .jpg, .gif, .png, Full screen animated gifs too!
-        videoName: " " // your picture files go in "images" folder of MMM-EasyBack
+        bgName: "",         // .jpg, .gif, .png, Full screen animated gifs too!
+        videoName: " ",     // your local picture files go in "images" folder of MMM-EasyBack
+        youTubeID: "",      // YouTube ID from the YouTube url
+        height: "1080px",   // your display's resolution in pixels. Enter in config.js
+        width: "1920px",    // your display's resolution in pixels. Enter in config.js
+        animationSpeed: "0",
+        updateInterval: 60 * 60 * 1000,
     },
 
     start: function() {
         self = this;
         this.url = '';
+
+        setInterval(function() {
+        self.updateDom(self.config.animationSpeed || 0);
+        }, this.config.updateInterval);
 
         if (this.config.bgName != "") {
             this.url = "modules/MMM-EasyBack/images/" + this.config.bgName;
@@ -29,6 +38,20 @@ Module.register("MMM-EasyBack", {
 
     // Override dom generator.
     getDom: function() {
+
+      if (this.config.youTubeID != '') {
+
+        var iframe = document.createElement("IFRAME");
+        iframe.classList.add("iframe");
+        iframe.style = "border: 0 none transparent ";
+        iframe.width = this.config.width;
+        iframe.height = this.config.height;
+        type="text/javascript";
+        iframe.src="https://www.youtube.com/embed/" + this.config.youTubeID + "?autoplay=1&loop=1&playlist=" + this.config.youTubeID;
+
+        return iframe;
+
+      } else
 
         var wrapper = document.createElement("div");
 
