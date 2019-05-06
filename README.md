@@ -41,3 +41,5 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy
 * Background picture files go in the "images" folder inside the MMM-EasyBack module folder.
 
 * Your local video files go in the "videos" folder inside the MMM-EasyBack module folder.
+
+* No need to download YouTube video. You only need the ID from the YouTube url
