@@ -40,6 +40,22 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy.
 
 * Background picture files go in the "images" folder inside the MMM-EasyBack module folder.
 
+## Electron browser man hinder autostart of video media
+
+do this
+
+edit MagicMirror/js/electron.js
+and add the line shown below
+
+```
+let mainWindow;
+
+function createWindow() {
+    app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');  //< -------- added
+```
+    
+save and restart MagicMirror
+
 * Your local video files go in the "videos" folder inside the MMM-EasyBack module folder.
 
 * No need to download YouTube video. You only need the ID from the YouTube url
