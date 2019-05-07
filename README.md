@@ -48,8 +48,9 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy.
 
 ### Do this
 
-edit MagicMirror/js/electron.js
-and add the line shown below
+Edit MagicMirror/js/electron.js
+
+Add the line shown below
 
 ```
 let mainWindow;
@@ -58,6 +59,6 @@ function createWindow() {
     app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');  //< -------- added
 ```
     
-save and restart MagicMirror
+Save and restart MagicMirror
 
 
