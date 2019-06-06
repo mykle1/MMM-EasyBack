@@ -44,7 +44,7 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy.
 
 * No need to download YouTube video. You only need the ID from the YouTube url
 
-## Electron browser man hinder autostart of video media
+## Electron browser may hinder autostart of video media
 
 ### Do this
 
