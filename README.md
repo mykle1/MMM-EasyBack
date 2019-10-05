@@ -61,4 +61,28 @@ function createWindow() {
     
 Save and restart MagicMirror
 
+## Fix for use with Chromium Browser
+
+### Thanks to Darkmx-6
+
+I edited the file chromium_start.sh found here:
+
+pi@raspberrypi:~ $ ls
+chromium_start.sh  MagicMirror  mmstart.sh  node-v10.16.0-linux-armv6l  package-lock.json
+and added
+
+--autoplay-policy=no-user-gesture-required
+Example:
+
+  GNU nano 3.2                          chromium_start.sh                                                                         
+
+#!/bin/sh
+unclutter &
+xset -dpms # disable DPMS (Energy Star) features.
+xset s off # disable screen saver
+xset s noblank # don’t blank the video device
+matchbox-window-manager &
+#midori -e Fullscreen -a http://localhost:8080
+chromium-browser --autoplay-policy=no-user-gesture-required --incognito --kiosk http://localhost:8080/
+
 
