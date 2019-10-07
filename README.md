@@ -63,7 +63,7 @@ Save and restart MagicMirror
 
 ## Fix for use with Chromium Browser
 
-### Thanks to Darkmx-6
+### Thanks to @sdetweil and @Darkmx-6
 
 I edited the file chromium_start.sh found here:
 ```
