@@ -47,7 +47,7 @@ Module.register("MMM-EasyBack", {
         iframe.width = this.config.width;
         iframe.height = this.config.height;
         type="text/javascript";
-        iframe.src="https://www.youtube.com/embed/" + this.config.youTubeID + "?autoplay=1&loop=1&playlist=" + this.config.youTubeID;
+        iframe.src="https://www.youtube.com/embed/" + this.config.youTubeID + "?autoplay=1&mute=1&showinfo=0&vq=hd1080`;
 
         return iframe;
 
