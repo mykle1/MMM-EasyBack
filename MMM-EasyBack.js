@@ -24,10 +24,10 @@ Module.register("MMM-EasyBack", {
         self.updateDom(self.config.animationSpeed || 0);
         }, this.config.updateInterval);
 
-        if (this.config.bgName != "") {
-            this.url = "modules/MMM-EasyBack/images/" + this.config.bgName;
-        } else if (this.config.vidoeName != "") {
-            this.url = "modules/MMM-EasyBack/videos/" + this.config.video;
+        if (this.config.bgName != '') {
+            this.url = `modules/MMM-EasyBack/images/${this.config.bgName}`;
+        } else if (this.config.videoName != '') {
+            this.url = `modules/MMM-EasyBack/videos/${this.config.videoName}`;
         }
     },
 
@@ -46,8 +46,8 @@ Module.register("MMM-EasyBack", {
         iframe.style = "border: 0 none transparent ";
         iframe.width = this.config.width;
         iframe.height = this.config.height;
-        type="text/javascript";
-        iframe.src="https://www.youtube.com/embed/" + this.config.youTubeID + "?autoplay=1&mute=1&showinfo=0&vq=hd1080`;
+        type='text/javascript';
+        iframe.src=`https://www.youtube.com/embed/${this.config.youTubeID}?autoplay=1&mute=1&showinfo=0&vq=hd1080`;
 
         return iframe;
 
