@@ -27,9 +27,9 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy.
     module: 'MMM-EasyBack',
     position: 'fullscreen_below',
     config: {
-        bgName: "",          // "Example.jpg", the file name of your background image (case sensitive)
-        videoName: "",       // "hd0924.mov",         // file name of your local video
-        youTubeID: "GI3rBwqwDbw", // "GI3rBwqwDbw", // ID from any YouTube video. ID comes after the = sign of YouTube url
+        bgName: "Example.jpg",   // "Example.jpg", the file name of your background image (case sensitive)
+        videoName: "",       // "baboon.mp4",         // file name of your local video
+        youTubeID: "", //"SkeNMoDlHUU", // "So3vH9FY2H4", // ID from any YouTube video. ID comes after the = sign of YouTube url
         height: "1080px",    // your display's resolution in pixels. Enter in config.js
         width: "1920px",     // your display's resolution in pixels. Enter in config.js
     }
