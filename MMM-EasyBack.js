@@ -59,6 +59,23 @@ Module.register("MMM-EasyBack", {
       var video = document.createElement(null)
       wrapper.innerHTML = `<video autoplay loop muted id="video"><source src="modules/MMM-EasyBack/videos/${this.config.videoName}" type="video/mp4"></video>`
       wrapper.appendChild(video)
+
+      var loadedVideo = document.getElementById("video")
+
+      // Check if loop is supported
+      if (typeof loadedVideo.loop == "boolean") {
+        loadedVideo.loop = true
+      } else {
+        loadedVideo.on(
+          "ended",
+          function () {
+            this.currentTime = 0
+            this.play()
+          },
+          false
+        )
+      }
+      loadedVideo.play()
       console.log("MMM-EasyBack: Now showing image background")
     }
 
@@ -75,7 +92,7 @@ Module.register("MMM-EasyBack", {
   /////  Add this function to the modules you want to control with voice //////
   /////  Must be the same as in "sentences" array in MMM-voice.js /////
 
-  notificationReceived: function (notification, payload) {
+  notificationReceived: function (notification) {
     if (notification === "HIDE_BACKGROUND") {
       this.hide()
     } else if (notification === "SHOW_BACKGROUND") {
