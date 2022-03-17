@@ -57,7 +57,7 @@ Module.register("MMM-EasyBack", {
     // Handle Video
     else if (this.config.videoName != "") {
       var video = document.createElement(null)
-      wrapper.innerHTML = `<video autoplay loop id="video"><source src="modules/MMM-EasyBack/videos/${this.config.videoName}" type="video/mp4"></video>`
+      wrapper.innerHTML = `<video autoplay loop muted id="video"><source src="modules/MMM-EasyBack/videos/${this.config.videoName}" type="video/mp4"></video>`
       wrapper.appendChild(video)
       console.log("MMM-EasyBack: Now showing image background")
     }
