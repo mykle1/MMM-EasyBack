@@ -48,7 +48,7 @@ Module.register("MMM-EasyBack", {
 
     // Handle Image
     if (this.config.bgName != "") {
-      image.src = `modules/MMM-EasyBack/images/${this.config.videoName}`
+      image.src = `modules/MMM-EasyBack/images/${this.config.bgName}`
       image.className = "photo"
       wrapper.appendChild(image)
       console.log("MMM-EasyBack: Now showing image background")
