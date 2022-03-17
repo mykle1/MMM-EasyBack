@@ -8,7 +8,7 @@ Module.register("MMM-EasyBack", {
   defaults: {
     bgName: "", // .jpg, .gif, .png, Full screen animated gifs too!
     videoName: "", // your local picture files go in "images" folder of MMM-EasyBack
-    youTubeID: "So3vH9FY2H4", // YouTube ID from the YouTube url
+    youTubeID: "", // YouTube ID from the YouTube url
     height: "1080px", // your display's resolution in pixels. Enter in config.js
     width: "1920px", // your display's resolution in pixels. Enter in config.js
     animationSpeed: "0",
@@ -22,12 +22,6 @@ Module.register("MMM-EasyBack", {
     setInterval(function () {
       self.updateDom(self.config.animationSpeed || 0)
     }, this.config.updateInterval)
-
-    if (this.config.bgName != "") {
-      this.url = "modules/MMM-EasyBack/images/" + this.config.bgName
-    } else if (this.config.videoName != "") {
-      this.url = "modules/MMM-EasyBack/videos/" + this.config.videoName
-    }
   },
 
   getStyles: function () {
@@ -36,6 +30,7 @@ Module.register("MMM-EasyBack", {
 
   // Override dom generator.
   getDom: function () {
+    // Handle YouTube media
     if (this.config.youTubeID != "") {
       var iframe = document.createElement("IFRAME")
       iframe.classList.add("iframe")
@@ -48,17 +43,27 @@ Module.register("MMM-EasyBack", {
       return iframe
     } else var wrapper = document.createElement("div")
 
+    // Expecting image or video, create img element
     var image = document.createElement("img")
+
+    // Handle Image
     if (this.config.bgName != "") {
-      image.src = this.url
+      image.src = `modules/MMM-EasyBack/images/${this.config.videoName}`
       image.className = "photo"
-      console.log("MMM-EasyBack: Now showing image background")
       wrapper.appendChild(image)
-    } else if (this.config.videoName != "") {
+      console.log("MMM-EasyBack: Now showing image background")
+    }
+
+    // Handle Video
+    else if (this.config.videoName != "") {
       var video = document.createElement(null)
       wrapper.innerHTML = `<video autoplay loop id="video"><source src="modules/MMM-EasyBack/videos/${this.config.videoName}" type="video/mp4"></video>`
       wrapper.appendChild(video)
-    } else {
+      console.log("MMM-EasyBack: Now showing image background")
+    }
+
+    // No option used
+    else {
       console.log(
         "MMM-EasyBack error: Please enter either image OR video in config.js NOT BOTH"
       )
