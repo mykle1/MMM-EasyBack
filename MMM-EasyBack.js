@@ -60,22 +60,6 @@ Module.register("MMM-EasyBack", {
       wrapper.innerHTML = `<video autoplay loop muted id="video"><source src="modules/MMM-EasyBack/videos/${this.config.videoName}" type="video/mp4"></video>`
       wrapper.appendChild(video)
 
-      var loadedVideo = document.getElementById("video")
-
-      // Check if loop is supported
-      if (typeof loadedVideo.loop == "boolean") {
-        loadedVideo.loop = true
-      } else {
-        loadedVideo.on(
-          "ended",
-          function () {
-            this.currentTime = 0
-            this.play()
-          },
-          false
-        )
-      }
-      loadedVideo.play()
       console.log("MMM-EasyBack: Now showing image background")
     }
 
