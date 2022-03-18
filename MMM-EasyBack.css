@@ -3,9 +3,8 @@
  *
  */
 
-
 .MMM-EasyBack .photo {
-  width: 100%;               /* size the picture */
+  width: 100%; /* size the picture */
 }
 
 .MMM-EasyBack #video {
@@ -15,7 +14,7 @@
 
 .MMM-EasyBack .iframe {
   margin-top: 50px;
-	margin-bottom: 0px;
-	margin-left: 50px;
-	margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 50px;
+  margin-right: 0px;
 }

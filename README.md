@@ -12,17 +12,17 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy.
 
 ## Where your background files go
 
-* Your background picture files go in the "images" folder inside the MMM-EasyBack module folder.
+- Your background picture files go in the "images" folder inside the MMM-EasyBack module folder.
 
-* Your local video files go in the "videos" folder inside the MMM-EasyBack module folder.
+- Your local video files go in the "videos" folder inside the MMM-EasyBack module folder.
 
 ## Installation
 
-* `git clone https://github.com/mykle1/MMM-EasyBack` into the `~/MagicMirror/modules` directory.
+- `git clone https://github.com/Red-CS/MMM-EasyBack` into the `~/MagicMirror/modules` directory. If using MagicMirrorOS, clone into the `~/magicmirror/mounts/modules` directory.
 
 ## Config.js entry and options
 
-```
+```js
 {
     module: 'MMM-EasyBack',
     position: 'fullscreen_below',
@@ -38,11 +38,11 @@ Works by default with Hello-Lucy voice. https://github.com/mykle1/Hello-Lucy.
 
 ## Remember
 
-* Background picture files go in the "images" folder inside the MMM-EasyBack module folder.
+- Background picture files go in the "images" folder inside the MMM-EasyBack module folder.
 
-* Your local video files go in the "videos" folder inside the MMM-EasyBack module folder.
+- Your local video files go in the "videos" folder inside the MMM-EasyBack module folder.
 
-* No need to download YouTube video. You only need the ID from the YouTube url
+- No need to download YouTube video. You only need the ID from the YouTube url
 
 ## Electron browser may hinder autostart of video media
 
@@ -52,13 +52,13 @@ Edit MagicMirror/js/electron.js
 
 Add the line shown below
 
-```
+```js
 let mainWindow;
 
 function createWindow() {
     app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');  //< -------- added
 ```
-    
+
 Save and restart MagicMirror
 
 ## Fix for use with Chromium Browser
@@ -66,17 +66,20 @@ Save and restart MagicMirror
 ### Thanks to sdetweil and Darkmx-6
 
 I edited the file chromium_start.sh found here:
-```
+
+```bash
 pi@raspberrypi:~ $ ls
 chromium_start.sh  MagicMirror  mmstart.sh  node-v10.16.0-linux-armv6l  package-lock.json
 and added
 ```
+
 --autoplay-policy=no-user-gesture-required
 
 Example:
 
-  GNU nano 3.2                          chromium_start.sh                                                                         
-```
+GNU nano 3.2 chromium_start.sh
+
+```bash
 #!/bin/sh
 unclutter &
 xset -dpms # disable DPMS (Energy Star) features.
@@ -86,4 +89,3 @@ matchbox-window-manager &
 #midori -e Fullscreen -a http://localhost:8080
 chromium-browser --autoplay-policy=no-user-gesture-required --incognito --kiosk http://localhost:8080/
 ```
-
